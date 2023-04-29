@@ -1,0 +1,14 @@
+.card-body .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card-img-top{
+    width: 5vw;
+    height:9vh;
+}
+.card-body img{
+    width: 4vw;
+}

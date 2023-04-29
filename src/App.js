@@ -1,13 +1,7 @@
 import "./App.css";
 import Logo from "./images/logo1.png";
-import Menu from "./images/menu.png";
-import fb from "./images/fb.png";
-import ig from "./images/ig.png";
-import tw from "./images/tw.png";
-import share from "./images/share.png";
-import info from "./images/info.png";
 import bubble from "./images/bubble.png";
-import Equipments from "./components/Equipments";
+import Equipments from "./components/Equipments/Equipments";
 
 function App() {
   return (
@@ -16,16 +10,17 @@ function App() {
         <img src={Logo} alt="" className="logo" />
         {/* <button type="button">Sign Up</button> */}
       </div>
-      {/* <div className="content">
+      <div className="content">
         <small>Welcome to your</small>
         <h1>
-          Room
-          <br /> Automation
-          <br /> System
+          Ultimate
+          <br /> Smart
+          <br /> Home Automation System
         </h1>
-      </div> */}
+      </div>
       <div className="side-bar">
-        <img src={Menu} alt="" className="menu" />
+        <Equipments />
+        {/* <img src={Menu} alt="" className="menu" />
         <div className="social-links">
           <img src={fb} alt="" />
           <img src={ig} alt="" />
@@ -35,7 +30,7 @@ function App() {
         <div className="useful-links">
           <img src={share} alt="" />
           <img src={info} alt="" />
-        </div>
+        </div> */}
       </div>
 
       <div className="bubbles">
@@ -47,14 +42,14 @@ function App() {
         <img src={bubble} alt="" />
         <img src={bubble} alt="" />
       </div>
-      <div className="components">
+      {/* <div className="components">
         <div className="equip">
           <div className="items">
             <h2>Equipments</h2>
           </div>
           <Equipments />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

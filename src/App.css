@@ -2,13 +2,14 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: white;
+  /* color: white; */
 }
 
 .hero{
   width: 100%;
   height: 100vh;
-  background-image: url(./images/background.png);
+  background: linear-gradient(#008E8B , #000729);
+  /* background-image: url(./images/background.png); */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -41,7 +42,7 @@ button{
 .content{
   color: #fbfcfd;
   position: absolute;
-  top: 35%;
+  top: 50%;
   left: 6%;
   transform: translateY(-50%);
   z-index: 2;
@@ -53,8 +54,7 @@ h1{
 }
 
 .side-bar{
-  /* width: 30vw; */
-  width: 50px;
+  width: 25vw;
   height: 100vh;
   background: linear-gradient(#00545d , #000729);
   position: absolute;
@@ -154,69 +154,3 @@ h1{
 
 
 
-.components{
-  bottom: 1rem;
-  opacity: 0.8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  width: 100%;
-  position: absolute;
-  height: 30vh;
-  /* border: 1px solid red; */
-}
-
-.equip{
-  /* border: 1px solid green; */
-  width: 90% ;
-  height: 100%;
-  background: linear-gradient(#00545d , #000729);
-  border-radius: 2rem;
-}
-
-.items{
-  display: flex;
-  margin-top: 1rem;
-  align-items: center;
-  /* border: 1px solid blue; */
-  justify-content: center;
-}
-
-.box{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-}
-
-.device{
-  width: 30%;
-  height: 80%;
-  /* border: 2px solid yellow; */
-}
-
-.image{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 50%;
-}
-.toggle{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 30%;
-}
-
-.image img{
-  width: 80px;
-  /* height: 100px; */
-}
-.toggle img{
-  width: 80px;
-  height: 70px;
-}
