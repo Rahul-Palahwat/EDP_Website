@@ -1,9 +1,13 @@
 import "./App.css";
 import Logo from "./images/logo1.png";
+import Online from "./images/Online.png";
+import Offline from "./images/Offline.png";
 import bubble from "./images/bubble.png";
 import Equipments from "./components/Equipments/Equipments";
+import { useState } from "react";
 
 function App() {
+  const [live, setLive] = useState(false);
   return (
     <div className="hero">
       <div className="navbar">
@@ -19,7 +23,7 @@ function App() {
         </h1>
       </div>
       <div className="side-bar">
-        <Equipments />
+        <Equipments setLive={setLive} />
         {/* <img src={Menu} alt="" className="menu" />
         <div className="social-links">
           <img src={fb} alt="" />
@@ -31,6 +35,16 @@ function App() {
           <img src={share} alt="" />
           <img src={info} alt="" />
         </div> */}
+      </div>
+      <div className="live">
+        {live ? (
+          <img className="liveImage" src={Online} alt="" />
+        ) : (
+          <img className="liveImage" src={Offline} alt="" />
+        )}
+        <div className="contentLive">
+          You are {live ? "live now" : "Offline"}
+        </div>
       </div>
 
       <div className="bubbles">

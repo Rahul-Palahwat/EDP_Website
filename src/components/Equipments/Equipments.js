@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./Equipments.css";
 import LightOn from "../../images/LightOn.webp";
 import LightOff from "../../images/offBulb1.webp";
+import AcOn from "../../images/Ac5.gif";
+import AcOff from "../../images/Ac4.png";
 // import FanOff from "../../images/Fanoff1.png";
 import On from "../../images/on3.png";
 import Off from "../../images/off3.png";
 import Card from "../Card/Card";
 
-const Equipments = () => {
+const Equipments = ({ setLive }) => {
   const [fan1, setFan1] = useState(false);
   const [light1, setLight1] = useState(false);
   const [light2, setLight2] = useState(false);
@@ -18,22 +20,25 @@ const Equipments = () => {
 
   const operateLight1 = async () => {
     setLight1(!light1);
-    const response = await fetch(`Http://${api}/app1/${light1 ? off : on}`, {
+    console.log("Hello i am in light operatiion");
+    const response = await fetch(`Http://${api}/app2/${light1 ? off : on}`, {
       method: "GET",
     });
+    const json = await response.json();
+    console.log(json, "from localhost equipment");
   };
   const operateFan1 = async () => {
     setFan1(!fan1);
-    const response = await fetch(`Http://${api}/app3/${fan1 ? off : on}`, {
+    const response = await fetch(`Http://${api}/app1/${fan1 ? off : on}`, {
       method: "GET",
     });
   };
-  const operateLight2 = async () => {
-    setLight2(!light2);
-    const response = await fetch(`Http://${api}/app2/${light2 ? off : on}`, {
-      method: "GET",
-    });
-  };
+  // const operateLight2 = async () => {
+  //   setLight2(!light2);
+  //   const response = await fetch(`Http://${api}/app2/${light2 ? off : on}`, {
+  //     method: "GET",
+  //   });
+  // };
 
   const getAPI = async () => {
     const response = await fetch(
@@ -52,8 +57,22 @@ const Equipments = () => {
     console.log(api, "api to fetch data");
   };
 
+  const checkApp = async () => {
+    console.log("Hello i am in check on/off");
+    const response = await fetch(`Http://${api}/app3`, {
+      method: "GET",
+    });
+    if (response.ok === true) {
+      setLive(true);
+    }
+  };
+
+  // useEffect(() => {
+
+  // })
   useEffect(() => {
     getAPI();
+    checkApp();
   }, []);
   return (
     <div
@@ -70,21 +89,21 @@ const Equipments = () => {
         <Card
           image={LightOn}
           button={On}
-          Comp="Light1"
+          Comp="Light"
           operate={operateLight1}
         />
       ) : (
         <Card
           image={LightOff}
           button={Off}
-          Comp="Light1"
+          Comp="Light"
           operate={operateLight1}
         />
       )}
       {fan1 ? (
-        <Card image={LightOn} button={On} Comp="Fan1" operate={operateFan1} />
+        <Card image={AcOn} button={On} Comp="Fan/AC" operate={operateFan1} />
       ) : (
-        <Card image={LightOff} button={Off} Comp="Fan1" operate={operateFan1} />
+        <Card image={AcOff} button={Off} Comp="Fan/AC" operate={operateFan1} />
       )}
 
       {/* <button

@@ -2,6 +2,7 @@ import React from "react";
 import "./Card.css";
 
 const Card = ({ image, button, Comp, operate }) => {
+  let cc = "Fan/AC";
   return (
     <div className="card-body">
       <div
@@ -16,7 +17,17 @@ const Card = ({ image, button, Comp, operate }) => {
           color: "white",
         }}
       >
-        <img src={image} className="card-img-top" alt="..." />
+        {Comp === cc ? (
+          <img
+            style={{ width: "10vw" }}
+            src={image}
+            className="card-img-top"
+            alt="..."
+          />
+        ) : (
+          <img src={image} className="card-img-top" alt="..." />
+        )}
+
         <div className="card-body">
           <h5 className="card-title">{Comp}</h5>
           <img src={button} alt="" onClick={operate} />

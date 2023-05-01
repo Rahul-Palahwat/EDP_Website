@@ -7,8 +7,8 @@
 
 .card-img-top{
     width: 5vw;
-    height:9vh;
+    height:12vh;
 }
-.card-body img{
+.card-body>img{
     width: 4vw;
 }
